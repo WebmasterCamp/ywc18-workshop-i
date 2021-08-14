@@ -11,7 +11,7 @@ const ContainerNavbar = styled.div`
   position: fixed;
   top: 0;
   padding: 0 54px;
-  z-index: 1;
+  z-index: 10;
 `;
 
 const ContainerLeftSide = styled.div`
