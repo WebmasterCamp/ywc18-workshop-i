@@ -78,7 +78,7 @@ const useStylesDropDown = makeStyles((theme) => ({
     },
 }));
 
-const SearchBar = () => {
+const SearchBar = ({ keyword, setKeyword }) => {
     const classes = useStyles();
     const classesDropDown = useStylesDropDown()
     const [visitor, setVisitor] =  useState('ผู้เข้าพัก');
@@ -92,11 +92,17 @@ const SearchBar = () => {
         setStar(event.target.value)
     }
 
+    const handleOnChangeSearch = (e) => {
+        setKeyword(e.target.value)
+    }
+
     return (
         <ContainerSearchbar>
             <form className={classes.root} noValidate autoComplete="off">
                 <TextField 
                     label="ค้นหาสถานที่" variant="outlined"
+                    value={keyword}
+                    onChange={handleOnChangeSearch}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -168,15 +174,20 @@ const SearchBar = () => {
 }
 
 const Search = () => {
+
+    const [keyword, setKeyword] = useState("")
+
     return (
     <>
     <Container>
         <ContainerRightSide>
-                <SearchBar />
+                <SearchBar keyword={keyword} setKeyword={setKeyword} />
                 <ContainerGridCustom>
                     <Grid container spacing={3}>
                         {
-                            MOCK_HOTELS.map((hotel, i) =>
+                            MOCK_HOTELS
+                            .filter(hotel => hotel?.name.includes(keyword))
+                            .map((hotel, i) =>
                                 <Grid item xs={6} sm={3} >
                                     <HotelCard key={i} {...hotel} />
                                 </Grid>
