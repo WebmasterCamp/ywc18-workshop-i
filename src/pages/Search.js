@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useState } from 'react'
+// import { useParams } from "react-router-dom";
 import { Container as ContainerGrid } from "@material-ui/core";
 import HotelCard from '../components/HotelsCard'
 import Grid from "@material-ui/core/Grid";
@@ -15,7 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import { makeStyles } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
-
+import Navbar from '../components/Navbar';
 import FormControl from '@material-ui/core/FormControl';
 
 const Container = styled.div`
@@ -83,7 +83,7 @@ const SearchBar = ({ keyword, setKeyword }) => {
     const classesDropDown = useStylesDropDown()
     const [visitor, setVisitor] =  useState('ผู้เข้าพัก');
     const [star, setStar] = useState('ระดับดาว');
-    let { slug } = useParams();
+    // let { slug } = useParams();
     const handleChangeVisitor = (event) => {
         setVisitor(event.target.value);
     };
@@ -95,9 +95,7 @@ const SearchBar = ({ keyword, setKeyword }) => {
     const handleOnChangeSearch = (e) => {
         setKeyword(e.target.value)
     }
-    useEffect(() => {
-        setKeyword(slug)
-    }, [])
+   
 
     return (
         <ContainerSearchbar>
@@ -182,6 +180,7 @@ const Search = () => {
 
     return (
     <>
+            <Navbar />
     <Container>
         <ContainerRightSide>
                 <SearchBar keyword={keyword} setKeyword={setKeyword} />
