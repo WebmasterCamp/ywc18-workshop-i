@@ -1,5 +1,7 @@
 import { Container } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import SuggessLocation from "../components/SuggessLocation";
+import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -7,6 +9,7 @@ import HotelsCard from "../components/HotelsCard";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import FeatureHotel from "../components/FeatureHotel";
+import FeatureHotel2 from "../components/FeatureHotel2";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,49 +30,85 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const SectionNavigator = styled.div`
+  display: block;
+  visibility: hidden;
+`;
+
 const Home = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <>
       <Navbar />
       <Header />
       <Container className={classes.root}>
+        <SectionNavigator id="suggest_location" />
         <Typography variant="h5" component="h5" className={classes.Typo}>
           Workation ใกล้บ้าน
         </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
               title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              subTitle="เดินทาง 3 นาที"
             />
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
-              title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              title="นนทบุรี"
+              subTitle="เดินทาง 30 นาที"
             />
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
-              title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              title="เยาวราช"
+              subTitle="เดินทาง 30 นาที"
             />
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
-              title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              title="ชะอำ"
+              subTitle="เดินทาง 45 นาที"
             />
           </Grid>
         </Grid>
       </Container>
-      <div className={classes.featSuggest} id="featured_hotels">
+      <div className={classes.featSuggest}>
         <Container className={classes.root}>
+          <SectionNavigator id="featured_hotels" />
           <Typography
             variant="h5"
             component="h5"
@@ -95,8 +134,10 @@ const Home = () => {
           </Grid>
         </Container>
       </div>
-      <div className={classes.featPlan} id="featured_plans">
+
+      <div className={classes.featPlan}>
         <Container className={classes.root}>
+          <SectionNavigator id="featured_plans" />
           <Typography
             variant="h5"
             component="h5"
@@ -107,10 +148,10 @@ const Home = () => {
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={6} sm={6}>
-              <FeatureHotel className={classes.FeatureHotel} />
+              <FeatureHotel2 className={classes.FeatureHotel} />
             </Grid>
             <Grid item xs={6} sm={6}>
-              <FeatureHotel className={classes.FeatureHotel} />
+              <FeatureHotel2 className={classes.FeatureHotel} />
             </Grid>
           </Grid>
         </Container>

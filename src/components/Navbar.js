@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
+import logo from "../assets/img/logo2.png";
 
 const ContainerNavbar = styled.div`
-  background-color: pink;
+  background-color: white;
   width: 100%;
   height: 80px;
   display: flex;
@@ -11,7 +11,8 @@ const ContainerNavbar = styled.div`
   position: fixed;
   top: 0;
   padding: 0 54px;
-  z-index: 1;
+  z-index: 10;
+  box-shadow: 0px 1px 5px #443f41;
 `;
 
 const ContainerLeftSide = styled.div`
@@ -43,14 +44,10 @@ const Navbar = () => {
   return (
     <ContainerNavbar>
       <ContainerLeftSide>
-        <IDEAVELText>IDEAVEL</IDEAVELText>
-        <ContainerNavigator>
-          <a href="/#suggest_location">เมนู 1</a>
-          <a href="/#featured_hotels">เมนู 2</a>
-          <a href="/#featured_plans">เมนู 3</a>
-        </ContainerNavigator>
+        <IDEAVELText>
+          <img src={logo} style={{ width: "80px" }} />
+        </IDEAVELText>
       </ContainerLeftSide>
-      <Button variant="contained">Button</Button>
     </ContainerNavbar>
   );
 };
