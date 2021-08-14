@@ -1,11 +1,11 @@
-import { useState} from 'react'
-
+import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import { Container as ContainerGrid } from "@material-ui/core";
 import HotelCard from '../components/HotelsCard'
 import Grid from "@material-ui/core/Grid";
 import { MOCK_HOTELS } from '../data/hotels'
 import styled from 'styled-components';
-import imvisitor_price_map from '../assets/img/price-map.jpg'
+import img_visitor_price_map from '../assets/img/price-map.jpg'
 
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -78,12 +78,12 @@ const useStylesDropDown = makeStyles((theme) => ({
     },
 }));
 
-const SearchBar = () => {
+const SearchBar = ({ keyword, setKeyword }) => {
     const classes = useStyles();
     const classesDropDown = useStylesDropDown()
     const [visitor, setVisitor] =  useState('ผู้เข้าพัก');
     const [star, setStar] = useState('ระดับดาว');
-
+    let { slug } = useParams();
     const handleChangeVisitor = (event) => {
         setVisitor(event.target.value);
     };
@@ -92,11 +92,20 @@ const SearchBar = () => {
         setStar(event.target.value)
     }
 
+    const handleOnChangeSearch = (e) => {
+        setKeyword(e.target.value)
+    }
+    useEffect(() => {
+        setKeyword(slug)
+    }, [])
+
     return (
         <ContainerSearchbar>
             <form className={classes.root} noValidate autoComplete="off">
                 <TextField 
                     label="ค้นหาสถานที่" variant="outlined"
+                    value={keyword}
+                    onChange={handleOnChangeSearch}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -168,15 +177,20 @@ const SearchBar = () => {
 }
 
 const Search = () => {
+
+    const [keyword, setKeyword] = useState("")
+
     return (
     <>
     <Container>
         <ContainerRightSide>
-                <SearchBar />
+                <SearchBar keyword={keyword} setKeyword={setKeyword} />
                 <ContainerGridCustom>
                     <Grid container spacing={3}>
                         {
-                            MOCK_HOTELS.map((hotel, i) =>
+                            MOCK_HOTELS
+                            .filter(hotel => hotel?.name.includes(keyword))
+                            .map((hotel, i) =>
                                 <Grid item xs={6} sm={3} >
                                     <HotelCard key={i} {...hotel} />
                                 </Grid>
@@ -185,7 +199,7 @@ const Search = () => {
                     </Grid>
                 </ContainerGridCustom>
         </ContainerRightSide> 
-        <Map src={imvisitor_price_map} />
+        <Map src={img_visitor_price_map} />
     </Container>
     </>
     )
