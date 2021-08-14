@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import logo from "../assets/img/logo2.png";
+import { useHistory } from "react-router-dom";
 
 const ContainerNavbar = styled.div`
   background-color: white;
@@ -41,11 +42,18 @@ const ContainerNavigator = styled.div`
 `;
 
 const Navbar = () => {
+  const history = useHistory();
   return (
     <ContainerNavbar>
       <ContainerLeftSide>
         <IDEAVELText>
-          <img src={logo} style={{ width: "80px" }} />
+          <img
+            src={logo}
+            style={{ width: "80px" }}
+            onClick={() => {
+              history.push("/");
+            }}
+          />
         </IDEAVELText>
       </ContainerLeftSide>
     </ContainerNavbar>

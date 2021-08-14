@@ -38,19 +38,15 @@ const SuggessLocation = ({ image, title, subTitle }) => {
   return (
     <Grid>
       <Card className={classes.root}>
-        <CardMedia
-          className={classes.cover}
-          image={image}
-          title="Live from space album cover"
-        />
+        <CardMedia className={classes.cover} image={image} />
         <div className={classes.details}>
           <CardContent className={classes.content}>
-            <Typography component="h5" variant="h5">
+            <h2 component="h5" variant="h5">
               {title}
-            </Typography>
-            <Typography variant="subtitle1" color="textSecondary">
+            </h2>
+            <p variant="subtitle1" color="textSecondary">
               {subTitle}
-            </Typography>
+            </p>
           </CardContent>
         </div>
       </Card>

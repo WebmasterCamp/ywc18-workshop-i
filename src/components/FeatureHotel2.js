@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FeatureHotel2() {
+export default function FeatureHotel2({ img }) {
   const classes = useStyles();
   const history = useHistory();
   return (
@@ -44,46 +44,36 @@ export default function FeatureHotel2() {
       <Card className={classes.root}>
         <CardMedia
           className={classes.cover}
-          image="https://ak-d.tripcdn.com/images/220p1700000136q7s4F4E_Z_550_412_R5_Q70_D.jpg"
+          image={img}
           title="เดอะ พาราไดซ์ รีสอร์ตแอนด์สปา รีสอร์ตสุดงดงาม อากาศสดชื่น ติดทะเลชะอำ"
           style={{ width: "50%", objectFit: "cover" }}
         />
         <div className={classes.details}>
           <CardContent className={classes.content}>
-            <Typography
-              component="h5"
-              variant="h5"
+            <h2
               onClick={() => {
                 history.push("/detail/1");
               }}
             >
               เดอะ พาราไดซ์ รีสอร์ตแอนด์สปา รีสอร์ตสุดงดงาม อากาศสดชื่น
               ติดทะเลชะอำ
-            </Typography>
-            <Typography variant="subtitle1" color="textSecondary">
+            </h2>
+            <p variant="subtitle1" color="textSecondary">
               หาดชะอำ, จ.เพชรบุรี
-            </Typography>
+            </p>
             <div className={classes.facility}>
-              <Typography variant="p" component="p" className={classes.Indent}>
+              <p variant="p" component="p" className={classes.Indent}>
                 <CheckIcon style={{ color: "green" }} />
                 Wifi ความเร็วสูง
-              </Typography>
-              <Typography variant="p" component="p" className={classes.Typo}>
+              </p>
+              <p variant="p" component="p" className={classes.Typo}>
                 <CheckIcon style={{ color: "green" }} />
                 ปลั๊กพ่วงให้ยืม
-              </Typography>
-              <Typography variant="p" component="p" className={classes.Indent}>
+              </p>
+              <p variant="p" component="p" className={classes.Indent}>
                 <CheckIcon style={{ color: "green" }} />
                 ชายหาด
-              </Typography>
-              <Typography variant="p" component="p" className={classes.Indent}>
-                <CheckIcon style={{ color: "green" }} />
-                เก้าอี้ถูกสุขลักษณะ
-              </Typography>
-              <Typography variant="p" component="p" className={classes.Indent}>
-                <CheckIcon style={{ color: "green" }} />
-                ปรินท์เตอร์ให้ยืม
-              </Typography>
+              </p>
             </div>
           </CardContent>
         </div>

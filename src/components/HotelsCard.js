@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function HotelCard() {
+export default function HotelCard({ img }) {
   const classes = useStyles();
   const history = useHistory();
 
@@ -26,20 +26,19 @@ export default function HotelCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768"
+          image={img}
           title="Contemplative Reptile"
           onClick={() => {
             history.push("/detail/1");
           }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
+          <h2 gutterBottom variant="h5" component="h2">
+            เดอะ พาราไดซ์ รีสอร์ต แอนด์สปา
+          </h2>
+          <p variant="body2" color="textSecondary" component="p">
+            หาดชะอำ, จ.เพชรบุรี
+          </p>
         </CardContent>
       </CardActionArea>
     </Card>
