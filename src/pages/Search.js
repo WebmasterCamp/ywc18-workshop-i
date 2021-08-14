@@ -18,6 +18,22 @@ import Select from "@material-ui/core/Select";
 import Navbar from "../components/Navbar";
 import FormControl from "@material-ui/core/FormControl";
 
+const TextFieldcustom = styled(TextField)`
+      && {
+        width: 493px;
+        input {
+            height: 36px !important;
+            padding: 0;
+        }
+     }
+`
+
+const ContainerLine = styled.div`
+width: 100%;
+    display: flex;
+    align-items: center;
+`
+
 const Container = styled.div`
   display: flex;
   height: 100vh;

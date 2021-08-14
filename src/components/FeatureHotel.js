@@ -52,49 +52,55 @@ export default function FeatureHotel() {
         />
         <div className={classes.details}>
           <CardContent className={classes.content}>
-            <h2
+            <Typography
+              component="h5"
+              variant="h5"
               onClick={() => {
                 history.push("/detail/1");
               }}
             >
               เดอะ พาราไดซ์ รีสอร์ตแอนด์สปา รีสอร์ตสุดงดงาม อากาศสดชื่น
               ติดทะเลชะอำ
-            </h2>
-            <p variant="subtitle1" color="textSecondary">
+            </Typography>
+            <Typography variant="subtitle1" color="textSecondary">
               หาดชะอำ, จ.เพชรบุรี
-            </p>
+            </Typography>
             <div className={classes.facility}>
-              <p variant="p" component="p" className={classes.Indent}>
+              <Typography variant="p" component="p" className={classes.Indent}>
                 <CheckIcon style={{ color: "green" }} />
                 Wifi ความเร็วสูง
-              </p>
-              <p variant="p" component="p" className={classes.Typo}>
+              </Typography>
+              <Typography variant="p" component="p" className={classes.Typo}>
                 <CheckIcon style={{ color: "green" }} />
                 ปลั๊กพ่วงให้ยืม
-              </p>
-              <p variant="p" component="p" className={classes.Indent}>
+              </Typography>
+              <Typography variant="p" component="p" className={classes.Indent}>
                 <CheckIcon style={{ color: "green" }} />
                 ชายหาด
-              </p>
-              <p variant="p" component="p" className={classes.Indent}>
+              </Typography>
+              <Typography variant="p" component="p" className={classes.Indent}>
                 <CheckIcon style={{ color: "green" }} />
                 เก้าอี้ถูกสุขลักษณะ
-              </p>
-              <p variant="p" component="p" className={classes.Indent}>
+              </Typography>
+              <Typography variant="p" component="p" className={classes.Indent}>
                 <CheckIcon style={{ color: "green" }} />
                 ปรินท์เตอร์ให้ยืม
-              </p>
+              </Typography>
             </div>
 
             <div
               style={{
                 background: "#F7FAFC",
-                padding: "0px 20px",
+                padding: "20px",
                 borderRadius: "10px",
+                marginBottom: "20px",
               }}
             >
-              <p>บริการยอดเยี่ยม ทำเลดีมาก ประทับใจมากครับ ดีมาก</p>
-              <div style={{ marginTop: 4 }}>
+              <p>
+                บริการยอดเยี่ยม ทำเลดีมาก ประทับใจมากครับ ดีมาก
+                เหมาะสมกับการทำงานเป็นอย่างมาก
+              </p>
+              <div style={{ marginTop: 10 }}>
                 <StarIcon style={{ color: "#FF9A16" }} />
                 <StarIcon style={{ color: "#FF9A16" }} />
                 <StarIcon style={{ color: "#FF9A16" }} />
