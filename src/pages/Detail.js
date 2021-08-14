@@ -8,6 +8,8 @@ import SuggestPlan from "../components/SuggestPlan";
 import CheckIcon from "@material-ui/icons/Check";
 import StarsIcon from "@material-ui/icons/Stars";
 import Book from "../components/Book";
+import Review from "../components/Review";
+import StarIcon from "@material-ui/icons/Star";
 
 const Img = styled.img`
   width: 100%;
@@ -65,9 +67,18 @@ const Detail = () => {
     <>
       <Navbar />
       <Container className={classes.container}>
-        <Typography variant="h4" component="h4" className={classes.Typo}>
-          Workation ใกล้บ้าน
+        <Typography
+          variant="h4"
+          component="h4"
+          style={{ marginTop: "10px", marginBottom: "10px" }}
+        >
+          เดอะ พาราไดซ์ รีสอร์ทแอนด์สปา รีสอร์ทสุดงดงาม อากาศสดชื่น ติดทะเลชะอำ
         </Typography>
+        <span style={{ marginBottom: "20px" }}>
+          <StarIcon style={{ color: "#FF9A16" }} /> 4.8 ( 4 รีวิว )
+        </span>
+        <br />
+        <br />
         <div className={classes.ImageGrid}>
           <div>
             <Img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768" />
@@ -126,10 +137,10 @@ const Detail = () => {
           </div>
           <Book />
         </div>
-
-        <hr className={classes.hR} />
-
-        <SuggestPlan />
+      </Container>
+      <SuggestPlan />
+      <Container>
+        <Review />
       </Container>
     </>
   );
