@@ -1,11 +1,11 @@
-import { useState} from 'react'
-
+import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import { Container as ContainerGrid } from "@material-ui/core";
 import HotelCard from '../components/HotelsCard'
 import Grid from "@material-ui/core/Grid";
 import { MOCK_HOTELS } from '../data/hotels'
 import styled from 'styled-components';
-import imvisitor_price_map from '../assets/img/price-map.jpg'
+import img_visitor_price_map from '../assets/img/price-map.jpg'
 
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -83,7 +83,7 @@ const SearchBar = ({ keyword, setKeyword }) => {
     const classesDropDown = useStylesDropDown()
     const [visitor, setVisitor] =  useState('ผู้เข้าพัก');
     const [star, setStar] = useState('ระดับดาว');
-
+    let { slug } = useParams();
     const handleChangeVisitor = (event) => {
         setVisitor(event.target.value);
     };
@@ -95,6 +95,9 @@ const SearchBar = ({ keyword, setKeyword }) => {
     const handleOnChangeSearch = (e) => {
         setKeyword(e.target.value)
     }
+    useEffect(() => {
+        setKeyword(slug)
+    }, [])
 
     return (
         <ContainerSearchbar>
@@ -196,7 +199,7 @@ const Search = () => {
                     </Grid>
                 </ContainerGridCustom>
         </ContainerRightSide> 
-        <Map src={imvisitor_price_map} />
+        <Map src={img_visitor_price_map} />
     </Container>
     </>
     )
