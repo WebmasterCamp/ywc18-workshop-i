@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchIcon from '@material-ui/icons/Search';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
 
 const Container = styled.div`
   width: 100%;
@@ -64,7 +64,8 @@ const SearchBox = () => {
         setKeyword(e.target.value)
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+    console.log("clicked")
         history.push(`/search?keyword=${keyword}`);
     }
 
@@ -82,7 +83,7 @@ const SearchBox = () => {
                     ),
                 }}
             />
-            <ButtonSubmit onSubmit={handleSubmit}>ค้นหา</ButtonSubmit>
+            <ButtonSubmit variant="contained" onClick={handleSubmit}>ค้นหา</ButtonSubmit>
         </ContainerSearch>
     )
 }
