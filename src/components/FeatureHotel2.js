@@ -4,9 +4,8 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import StarIcon from "@material-ui/icons/Star";
-import CheckIcon from "@material-ui/icons/Check";
 import { useHistory } from "react-router-dom";
+import CheckIcon from "@material-ui/icons/Check";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,10 +36,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FeatureHotel() {
+export default function FeatureHotel2() {
   const classes = useStyles();
   const history = useHistory();
-
   return (
     <div className={classes.card}>
       <Card className={classes.root}>
@@ -86,26 +84,6 @@ export default function FeatureHotel() {
                 <CheckIcon style={{ color: "green" }} />
                 ปรินท์เตอร์ให้ยืม
               </Typography>
-            </div>
-
-            <div
-              style={{
-                background: "#F7FAFC",
-                padding: "20px",
-                borderRadius: "10px",
-                marginBottom: "20px",
-              }}
-            >
-              <p>
-                บริการยอดเยี่ยม ทำเลดีมาก ประทับใจมากครับ ดีมาก
-                เหมาะสมกับการทำงานเป็นอย่างมาก
-              </p>
-              <div style={{ marginTop: 10 }}>
-                <StarIcon style={{ color: "#FF9A16" }} />
-                <StarIcon style={{ color: "#FF9A16" }} />
-                <StarIcon style={{ color: "#FF9A16" }} />
-                <StarIcon style={{ color: "#FF9A16" }} />
-              </div>
             </div>
           </CardContent>
         </div>
