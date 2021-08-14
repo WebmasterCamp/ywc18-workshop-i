@@ -1,5 +1,6 @@
 import { Container } from "@material-ui/core";
 import SuggessLocation from "../components/SuggessLocation";
+import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -27,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const SectionNavigator = styled.div`
+  display: block;
+  visibility: hidden;
+`;
+
 const Home = () => {
   const classes = useStyles();
   return (
@@ -34,6 +40,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <Container className={classes.root}>
+        <SectionNavigator id="suggest_location" />
         <Typography variant="h5" component="h5" className={classes.Typo}>
           Workation ใกล้บ้าน
         </Typography>
@@ -68,8 +75,9 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-      <div className={classes.featSuggest} id="featured_hotels">
+      <div className={classes.featSuggest}>
         <Container className={classes.root}>
+          <SectionNavigator id="featured_hotels" />
           <Typography
             variant="h5"
             component="h5"
@@ -95,8 +103,10 @@ const Home = () => {
           </Grid>
         </Container>
       </div>
-      <div className={classes.featPlan} id="featured_plans">
+
+      <div className={classes.featPlan}>
         <Container className={classes.root}>
+          <SectionNavigator id="featured_plans" />
           <Typography
             variant="h5"
             component="h5"
