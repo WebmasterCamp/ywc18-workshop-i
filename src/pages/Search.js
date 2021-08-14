@@ -1,5 +1,5 @@
-import { useState } from 'react'
-// import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import { useLocation } from "react-router-dom";
 import { Container as ContainerGrid } from "@material-ui/core";
 import HotelCard from '../components/HotelsCard'
 import Grid from "@material-ui/core/Grid";
@@ -77,13 +77,18 @@ const useStylesDropDown = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
 }));
+// A custom hook that builds on useLocation to parse
+// the query string for you.
+const useQuery = ()  => {
+    return new URLSearchParams(useLocation().search);
+}
 
 const SearchBar = ({ keyword, setKeyword }) => {
     const classes = useStyles();
     const classesDropDown = useStylesDropDown()
     const [visitor, setVisitor] =  useState('ผู้เข้าพัก');
     const [star, setStar] = useState('ระดับดาว');
-    // let { slug } = useParams();
+    
     const handleChangeVisitor = (event) => {
         setVisitor(event.target.value);
     };
@@ -95,7 +100,13 @@ const SearchBar = ({ keyword, setKeyword }) => {
     const handleOnChangeSearch = (e) => {
         setKeyword(e.target.value)
     }
-   
+
+    
+    let query = useQuery();
+    useEffect(() => {
+        setKeyword(query.get("keyword"))
+        
+    }, [])
 
     return (
         <ContainerSearchbar>
