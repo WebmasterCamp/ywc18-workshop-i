@@ -67,13 +67,13 @@ const Detail = () => {
     <>
       <Navbar />
       <Container className={classes.container}>
-        <Typography
+        <h1
           variant="h4"
           component="h4"
           style={{ marginTop: "10px", marginBottom: "10px" }}
         >
           เดอะ พาราไดซ์ รีสอร์ทแอนด์สปา รีสอร์ทสุดงดงาม อากาศสดชื่น ติดทะเลชะอำ
-        </Typography>
+        </h1>
         <span style={{ marginBottom: "20px" }}>
           <StarIcon style={{ color: "#FF9A16" }} /> 4.8 ( 4 รีวิว )
         </span>
@@ -81,36 +81,36 @@ const Detail = () => {
         <br />
         <div className={classes.ImageGrid}>
           <div>
-            <Img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768" />
+            <Img src="https://images.unsplash.com/photo-1621891333885-66f833b348ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
           </div>
           <div>
             <div className={classes.ImageGrid}>
-              <Img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768" />
-              <Img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768" />
+              <Img src="https://images.unsplash.com/photo-1621891333885-66f833b348ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
+              <Img src="https://images.unsplash.com/photo-1621891333885-66f833b348ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
             </div>
             <div className={classes.ImageGrid}>
-              <Img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768" />
-              <Img src="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768" />
+              <Img src="https://images.unsplash.com/photo-1621891333885-66f833b348ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
+              <Img src="https://images.unsplash.com/photo-1621891333885-66f833b348ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
             </div>
           </div>
         </div>
         <div className={classes.Detail}>
           <div>
             <div className={classes.topDetail}>
-              <Typography variant="h6" component="h6" className={classes.Typo}>
+              <h3 variant="h6" component="h6" className={classes.Typo}>
                 <StarsIcon /> การทำความสะอาดแบบพิเศษ
-              </Typography>
-              <Typography variant="p" component="p" className={classes.Indent}>
+              </h3>
+              <p variant="p" component="p" className={classes.Indent}>
                 &emsp;&emsp;การทำความสะอาดแบบพิเศษเพื่อใช้ในสถานการณ์ COVID-19
                 และอนาคต
-              </Typography>
-              <Typography variant="h6" component="h6" className={classes.Typo}>
+              </p>
+              <h3 variant="h6" component="h6" className={classes.Typo}>
                 <StarsIcon />
                 ทำเลยอดเยี่ยม
-              </Typography>
-              <Typography variant="p" component="p" className={classes.Indent}>
+              </h3>
+              <p variant="p" component="p" className={classes.Indent}>
                 &emsp;&emsp;100% ของผู้เข้าพักล่าสุดให้คะแนนสถานที่ 5 ดาว
-              </Typography>
+              </p>
             </div>
             <div className={classes.facility}>
               <Typography variant="p" component="p" className={classes.Indent}>
