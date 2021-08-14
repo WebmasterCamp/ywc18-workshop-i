@@ -4,6 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import styled from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import Navbar from "../components/Navbar";
+import SuggestPlan from "../components/SuggestPlan";
+import CheckIcon from "@material-ui/icons/Check";
+import StarsIcon from "@material-ui/icons/Stars";
+import Book from "../components/Book";
 
 const Img = styled.img`
   width: 100%;
@@ -27,18 +31,18 @@ const useStyles = makeStyles((theme) => ({
   Typo: {},
 
   topDetail: {
-    backgroundColor: "#e3e3e3",
+    backgroundColor: "#F6F6F6",
     padding: 20,
     marginBottom: theme.spacing(2),
   },
   facility: {
-    backgroundColor: "#e3e3e3",
     width: "100%",
     padding: 20,
     display: "grid",
-    gridTemplateColumns: "1fr 1fr",
+    gridTemplateColumns: "auto auto auto",
     gap: 20,
     float: "left",
+    textAlign: "left",
   },
   Detail: {
     display: "grid",
@@ -48,14 +52,8 @@ const useStyles = makeStyles((theme) => ({
   ads: {
     backgroundColor: "#e3e3e3",
   },
-  suggest: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr",
-    gap: 10,
-  },
-  suggestItem: {
-    margin: "15px 0",
-    backgroundColor: "#e3e3e3",
+  hR: {
+    marginTop: theme.spacing(4),
   },
 }));
 
@@ -68,7 +66,7 @@ const Detail = () => {
       <Navbar />
       <Container className={classes.container}>
         <Typography variant="h4" component="h4" className={classes.Typo}>
-          Workation ใกล้บ้าน {id}
+          Workation ใกล้บ้าน
         </Typography>
         <div className={classes.ImageGrid}>
           <div>
@@ -89,48 +87,49 @@ const Detail = () => {
           <div>
             <div className={classes.topDetail}>
               <Typography variant="h6" component="h6" className={classes.Typo}>
-                การทำความสะอาดแบบพิเศษ
+                <StarsIcon /> การทำความสะอาดแบบพิเศษ
               </Typography>
               <Typography variant="p" component="p" className={classes.Indent}>
-                &emsp;Workation ใกล้บ้าน
+                &emsp;&emsp;การทำความสะอาดแบบพิเศษเพื่อใช้ในสถานการณ์ COVID-19
+                และอนาคต
               </Typography>
               <Typography variant="h6" component="h6" className={classes.Typo}>
-                การทำความสะอาดแบบพิเศษ
+                <StarsIcon />
+                ทำเลยอดเยี่ยม
               </Typography>
               <Typography variant="p" component="p" className={classes.Indent}>
-                &emsp;Workation ใกล้บ้าน
+                &emsp;&emsp;100% ของผู้เข้าพักล่าสุดให้คะแนนสถานที่ 5 ดาว
               </Typography>
             </div>
             <div className={classes.facility}>
-              <Typography variant="h6" component="h6" className={classes.Typo}>
-                การทำความสะอาดแบบพิเศษ
+              <Typography variant="p" component="p" className={classes.Indent}>
+                <CheckIcon style={{ color: "green" }} />
+                Wifi ความเร็วสูง
               </Typography>
-              <Typography
-                variant="h6"
-                component="h6"
-                className={classes.Indent}
-              >
-                Workation ใกล้บ้าน
+              <Typography variant="p" component="p" className={classes.Typo}>
+                <CheckIcon style={{ color: "green" }} />
+                ปลั๊กพ่วงให้ยืม
               </Typography>
-              <Typography variant="h6" component="h6" className={classes.Typo}>
-                การทำความสะอาดแบบพิเศษ
+              <Typography variant="p" component="p" className={classes.Indent}>
+                <CheckIcon style={{ color: "green" }} />
+                ชายหาด
               </Typography>
-              <Typography
-                variant="h6"
-                component="h6"
-                className={classes.Indent}
-              >
-                Workation ใกล้บ้าน
+              <Typography variant="p" component="p" className={classes.Indent}>
+                <CheckIcon style={{ color: "green" }} />
+                เก้าอี้ถูกสุขลักษณะ
+              </Typography>
+              <Typography variant="p" component="p" className={classes.Indent}>
+                <CheckIcon style={{ color: "green" }} />
+                ปรินท์เตอร์ให้ยืม
               </Typography>
             </div>
           </div>
-          <div className={classes.ads}>test</div>
+          <Book />
         </div>
-        <div className={classes.suggest}>
-          <div className={classes.suggestItem}>ccc</div>
-          <div className={classes.suggestItem}>ccc</div>
-          <div className={classes.suggestItem}>ccc</div>
-        </div>
+
+        <hr className={classes.hR} />
+
+        <SuggestPlan />
       </Container>
     </>
   );
