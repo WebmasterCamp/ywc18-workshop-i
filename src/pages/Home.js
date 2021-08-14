@@ -33,7 +33,7 @@ const Home = () => {
     <>
       <Navbar />
       <Header />
-      <Container className={classes.root} id="suggest_location">
+      <Container className={classes.root}>
         <Typography variant="h5" component="h5" className={classes.Typo}>
           Workation ใกล้บ้าน
         </Typography>
