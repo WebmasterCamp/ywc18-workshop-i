@@ -1,6 +1,5 @@
 {
-  "name": "ywc18-boilerplate",
-  "homepage": "https://WebmasterCamp.github.io/ywc18-workshop-i",
+  "name": "ywc18-workshop-i",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
