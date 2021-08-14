@@ -18,6 +18,22 @@ import Select from '@material-ui/core/Select';
 import Navbar from '../components/Navbar';
 import FormControl from '@material-ui/core/FormControl';
 
+const TextFieldcustom = styled(TextField)`
+      && {
+        width: 493px;
+        input {
+            height: 36px !important;
+            padding: 0;
+        }
+     }
+`
+
+const ContainerLine = styled.div`
+width: 100%;
+    display: flex;
+    align-items: center;
+`
+
 const Container = styled.div`
     display: flex;
     height: 100vh;
@@ -51,12 +67,13 @@ const ContainerGridCustom = styled(ContainerGrid)`
 
 const ContainerSearchbar = styled.div`
     margin-top: 80px;
-    height: 146px;
+    /* height: 146px; */
     width: 100%;
     margin-bottom: 32px;
     max-width: 1232px;
-    margin: 32px auto;
+    margin-top: 32px;
     position: sticky;
+    /* background: #000; */
 `
 
 const useStyles = makeStyles((theme) => ({
@@ -77,8 +94,31 @@ const useStylesDropDown = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
 }));
-// A custom hook that builds on useLocation to parse
-// the query string for you.
+
+const TagContainer = styled.div`
+    display: flex;
+    width: 100%;
+  
+`
+
+const Tag = styled.span`
+     display:  flex;
+     align-items: center;
+     justify-content: center ;
+    background: #F7FAFC;
+    border: 1px solid #B8CBE0;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 0 16px;
+    margin-top: 26px;
+    margin-left: 8px;
+    cursor: pointer;
+    :hover {
+    background: #E7EFF7;
+    }
+
+`
+
 const useQuery = ()  => {
     return new URLSearchParams(useLocation().search);
 }
@@ -100,7 +140,6 @@ const SearchBar = ({ keyword, setKeyword }) => {
     const handleOnChangeSearch = (e) => {
         setKeyword(e.target.value)
     }
-
     
     let query = useQuery();
     useEffect(() => {
@@ -111,7 +150,8 @@ const SearchBar = ({ keyword, setKeyword }) => {
     return (
         <ContainerSearchbar>
             <form className={classes.root} noValidate autoComplete="off">
-                <TextField 
+                <ContainerLine>
+                <TextFieldcustom
                     label="ค้นหาสถานที่" variant="outlined"
                     value={keyword}
                     onChange={handleOnChangeSearch}
@@ -143,6 +183,8 @@ const SearchBar = ({ keyword, setKeyword }) => {
                         shrink: true,
                     }}
                 />
+                </ContainerLine>
+                <ContainerLine>
                 <FormControl variant="outlined" className={classesDropDown.formControl}>
                     <InputLabel id="demo-simple-select-outlined-label">ผู้เข้าพัก</InputLabel>
                     <Select
@@ -155,7 +197,11 @@ const SearchBar = ({ keyword, setKeyword }) => {
                         <MenuItem value="">
                             <em>None</em>
                         </MenuItem>
-                        <MenuItem value={10}>ผู้เข้าพัก</MenuItem>
+                            <MenuItem value={1}>1 คน</MenuItem>
+                            <MenuItem value={2}>1-3 คน</MenuItem>
+                            <MenuItem value={3}>4 คนขึ้นไป</MenuItem>
+                            <MenuItem value={4}>10 คนขึ้นไป</MenuItem>
+                            <MenuItem value={5}>50 คนขึ้นไป</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl variant="outlined" className={classesDropDown.formControl}>
@@ -170,7 +216,11 @@ const SearchBar = ({ keyword, setKeyword }) => {
                         <MenuItem value="">
                             <em>None</em>
                         </MenuItem>
-                        <MenuItem value={10}>ระดับดาว</MenuItem>
+                        <MenuItem value={1}>1</MenuItem>
+                            <MenuItem value={2}>2</MenuItem>
+                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value={4}>4</MenuItem>
+                            <MenuItem value={5}>5</MenuItem>
                     </Select>
                 </FormControl>
                 <TextField
@@ -179,8 +229,15 @@ const SearchBar = ({ keyword, setKeyword }) => {
                 <TextField
                     label="ราคาสูงสุด" variant="outlined"
                 />
+                </ContainerLine>
+                <TagContainer>
+                    <Tag>ไวไฟความเร็วสูง</Tag>
+                    <Tag>โต๊ะทำงาน</Tag>
+                    <Tag>ปลั๊กไฟ</Tag>
+                    <Tag>ห้องเก็บเสียง</Tag>
+                </TagContainer>
             </form>
-       
+           
         </ContainerSearchbar>
     );
 }

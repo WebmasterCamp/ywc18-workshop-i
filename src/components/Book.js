@@ -7,6 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -80,7 +81,9 @@ export default function Book() {
             </Select>
           </FormControl>
           <Button variant="contained" color="primary" className={classes.btn}>
+                      <Link to="/booking/plan">
             จอง
+                      </Link>
           </Button>
         </div>
       </div>
