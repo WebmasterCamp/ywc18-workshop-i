@@ -1,4 +1,5 @@
 import { Container } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import SuggessLocation from "../components/SuggessLocation";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
@@ -8,6 +9,7 @@ import HotelsCard from "../components/HotelsCard";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import FeatureHotel from "../components/FeatureHotel";
+import FeatureHotel2 from "../components/FeatureHotel2";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +37,7 @@ const SectionNavigator = styled.div`
 
 const Home = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <>
       <Navbar />
@@ -45,32 +48,60 @@ const Home = () => {
           Workation ใกล้บ้าน
         </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
               title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              subTitle="เดินทาง 3 นาที"
             />
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
-              title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              title="นนทบุรี"
+              subTitle="เดินทาง 30 นาที"
             />
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
-              title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              title="เยาวราช"
+              subTitle="เดินทาง 30 นาที"
             />
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid
+            item
+            xs={6}
+            sm={3}
+            onClick={() => {
+              history.push("/detail/1");
+            }}
+          >
             <SuggessLocation
               image="https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
-              title="กรุงเทพ"
-              subTitle="เมืองน่าเที่ยว"
+              title="ชะอำ"
+              subTitle="เดินทาง 45 นาที"
             />
           </Grid>
         </Grid>
@@ -117,10 +148,10 @@ const Home = () => {
           </Typography>
           <Grid container spacing={3}>
             <Grid item xs={6} sm={6}>
-              <FeatureHotel className={classes.FeatureHotel} />
+              <FeatureHotel2 className={classes.FeatureHotel} />
             </Grid>
             <Grid item xs={6} sm={6}>
-              <FeatureHotel className={classes.FeatureHotel} />
+              <FeatureHotel2 className={classes.FeatureHotel} />
             </Grid>
           </Grid>
         </Container>

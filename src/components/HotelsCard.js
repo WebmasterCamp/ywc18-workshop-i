@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
@@ -18,6 +19,7 @@ const useStyles = makeStyles({
 
 export default function HotelCard() {
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <Card className={classes.root}>
@@ -26,6 +28,9 @@ export default function HotelCard() {
           className={classes.media}
           image="https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768"
           title="Contemplative Reptile"
+          onClick={() => {
+            history.push("/detail/1");
+          }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
