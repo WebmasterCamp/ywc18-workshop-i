@@ -89,16 +89,12 @@ export default function FeatureHotel() {
             <div
               style={{
                 background: "#F7FAFC",
-                padding: "20px",
+                padding: "0px 20px",
                 borderRadius: "10px",
-                marginBottom: "20px",
               }}
             >
-              <p>
-                บริการยอดเยี่ยม ทำเลดีมาก ประทับใจมากครับ ดีมาก
-                เหมาะสมกับการทำงานเป็นอย่างมาก
-              </p>
-              <div style={{ marginTop: 10 }}>
+              <p>บริการยอดเยี่ยม ทำเลดีมาก ประทับใจมากครับ ดีมาก</p>
+              <div style={{ marginTop: 4 }}>
                 <StarIcon style={{ color: "#FF9A16" }} />
                 <StarIcon style={{ color: "#FF9A16" }} />
                 <StarIcon style={{ color: "#FF9A16" }} />

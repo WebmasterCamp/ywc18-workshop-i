@@ -74,14 +74,6 @@ export default function FeatureHotel2({ img }) {
                 <CheckIcon style={{ color: "green" }} />
                 ชายหาด
               </p>
-              <p variant="p" component="p" className={classes.Indent}>
-                <CheckIcon style={{ color: "green" }} />
-                เก้าอี้ถูกสุขลักษณะ
-              </p>
-              <p variant="p" component="p" className={classes.Indent}>
-                <CheckIcon style={{ color: "green" }} />
-                ปรินท์เตอร์ให้ยืม
-              </p>
             </div>
           </CardContent>
         </div>
