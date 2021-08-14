@@ -101,7 +101,7 @@ const Header = () => {
       <Container>
             <SearchBox />
             <HeaderText>
-                Ideas happen even in travel
+                IDEAS HAPPEN, EVEN TRAVELLING
             </HeaderText>
             <PRText>
                 ค้นหาสถานที่ท่องเที่ยว เพื่อการพักผ่อนและทำงาน ตามสไตล์ Workation
