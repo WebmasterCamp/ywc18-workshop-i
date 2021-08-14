@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
@@ -21,15 +20,15 @@ const isLogin = localStorage.getItem("IS_LOGIN");
 
 const Login = () => {
   const history = useHistory();
-  const [credential, setCredential] = useState({
-    username: "",
-    password: "",
-  });
+  // const [credential, setCredential] = useState({
+  //   username: "",
+  //   password: "",
+  // });
 
-  const handleOnChange = (e) => {
-    setCredential({ ...credential, [e.target.name]: e.target.value });
-    console.log(credential);
-  };
+  // const handleOnChange = (e) => {
+  //   setCredential({ ...credential, [e.target.name]: e.target.value });
+  //   console.log(credential);
+  // };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
